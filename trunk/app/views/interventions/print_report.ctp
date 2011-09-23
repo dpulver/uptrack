@@ -140,7 +140,7 @@ $im = "tmp_graph.png";
 // save the graph
 $graph->Stroke($im);
 */
-$im = "http://192.168.21.143/jpgraphs";
+$im = "http://127.0.0.1/jpgraphs";
 $pdf->ln();
 $pdf->Image($im,10,175,'','','png');
 
