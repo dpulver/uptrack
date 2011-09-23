@@ -54,7 +54,7 @@ $pdf->AddPage();
 
 
 //Logo
-$pdf->Image('http://192.168.21.143/img/spmlogo.png',10,8,60);
+//$pdf->Image('http://192.168.21.143/img/spmlogo.png',10,8,60);
     
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(80);
@@ -67,8 +67,8 @@ $pdf->SetFillColor(200,220,255);
 //Title
 $pdf->Cell(0,6,"",0,1,'C',1);
 
-$fname = $student;
-$lname = 'too';
+$fname = 'bob';
+$lname = 'student';
 $studentid = '123456';
 $teacher = 'teacher';
 $grade = '6';
