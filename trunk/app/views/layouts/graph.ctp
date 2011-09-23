@@ -1,1 +1,4 @@
-<?php echo $content_for_layout; ?>
+<?php 
+header("Content-type: image/png"); 
+echo $content_for_layout; 
+?>
