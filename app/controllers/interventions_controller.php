@@ -67,7 +67,7 @@ class InterventionsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
-	function print_report($id = null, $student = 'bob') {
+	function print_report($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for intervention', true));
 			$this->redirect(array('action'=>'index'));
@@ -78,9 +78,26 @@ class InterventionsController extends AppController {
 		}*/
 		//$this->Session->setFlash(__('Intervention was not printed', true));
 		//$this->redirect(array('action' => 'index'));
-		$temp = $intervention['Student']['full_name'];
-		$this->set('student', $temp );
+		//$temp = $intervention['Student']['full_name'];
+		//$this->set('student', $temp );
 		$this->layout = 'pdf'; //this will use the pdf.ctp layout 
+        $this->render(); 
+	}
+	
+	function graph($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for intervention', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		/*if ($this->Intervention->graph($id)) {
+			$this->Session->setFlash(__('Report printed', true));
+			$this->redirect(array('action'=>'index'));
+		}*/
+		//$this->Session->setFlash(__('Intervention was not printed', true));
+		//$this->redirect(array('action' => 'index'));
+		//$temp = $intervention['Student']['full_name'];
+		//$this->set('student', $temp );
+		$this->layout = 'graph'; //this will use the pdf.ctp layout 
         $this->render(); 
 	}
 }
