@@ -69,7 +69,7 @@
 	</dl>
 	<dl>
 		<dt>graph</dt>
-		<dd><img src="/jpgraphs/" /></dd>
+		<dd><img src="/interventions/graph/<?php echo $intervention['Intervention']['id']; ?>"></dd>
 	</dl>
 </div>
 <div class="actions">
