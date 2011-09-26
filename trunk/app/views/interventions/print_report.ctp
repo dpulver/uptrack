@@ -140,11 +140,11 @@ $im = "tmp_graph.png";
 // save the graph
 $graph->Stroke($im);
 */
-$im = "http://127.0.0.1/jpgraphs";
+$im = '"http://' . $_SERVER['SERVER_ADDR'] .'/interventions/graph/' . $intervention['Intervention']['id'] . '.png"';
 $pdf->ln();
 $pdf->Image($im,10,175,'','','png');
 
-$pdf->Output('uptrack.pdf', 'I');
+$pdf->Output();
 
 //unlink($im);
 
