@@ -1,6 +1,7 @@
 <?php 
 App::import('Vendor', 'jpgraph/jpgraph');
 App::import('Vendor', 'jpgraph/jpgraph_line');
+App::import('Vendor', 'jpgraph/jpg-config.inc');
 
 $ydata = array(11,11,11);
 $ydata2 = array(5,7,9);
