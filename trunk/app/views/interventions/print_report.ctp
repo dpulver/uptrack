@@ -134,7 +134,7 @@ $im = "tmp_graph.png";
 $graph->Stroke($im);
 */
 $pdf->ln();
-$pdf->Image('http://localhost/interventions/graph/4',10,175,'','','PNG');
+$pdf->Image('http://localhost/interventions/graph/' . $intervention['Intervention']['id'],10,175,'','','PNG');
 
 $pdf->Output();
 

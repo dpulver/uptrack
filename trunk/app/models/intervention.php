@@ -34,7 +34,7 @@ class Intervention extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'week',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
