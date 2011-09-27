@@ -3,8 +3,16 @@ App::import('Vendor', 'jpgraph/jpgraph');
 App::import('Vendor', 'jpgraph/jpgraph_line');
 App::import('Vendor', 'jpgraph/jpg-config.inc');
 
-$ydata = array(11,11,11);
+$ydata = array();
 $ydata2 = array(5,7,9);
+		$i = 0;
+		foreach ($intervention['InterventionDetail'] as $interventionDetail):
+			$ydata[] = $interventionDetail['score'];
+		endforeach;
+
+
+
+
 // Create the graph. These two calls are always required
 $graph  = new Graph(550, 250,"auto");    
 $graph->SetScale( "textlin", 0, 150);
