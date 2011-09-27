@@ -54,11 +54,11 @@ $pdf->AddPage();
 
 
 //Logo
-//$pdf->Image('http://192.168.21.143/img/spmlogo.png',10,8,60);
+$pdf->Image('http://localhost/img/spmlogo.png',10,8,60);
     
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(80);
-$pdf->Cell(80,20,'Anton Elementary Learning Center', 0, 1);
+$pdf->Cell(80,20,'my school Learning Center', 0, 1);
 
 //Arial 12
 $pdf->SetFont('Arial','',16);
@@ -67,53 +67,46 @@ $pdf->SetFillColor(200,220,255);
 //Title
 $pdf->Cell(0,6,"",0,1,'C',1);
 
-$fname = 'bob';
-$lname = 'student';
-$studentid = '123456';
-$teacher = 'teacher';
-$grade = '6';
-
-
-
 //Student info
 $pdf->SetFont('Arial','',12);
-$pdf->Cell(80,8,'Name: '. $fname . ' ' . $lname);
-$pdf->Cell(80,8,'Student ID: '. $studentid,0,1);
+$pdf->Cell(80,8,'Name: '. $intervention['Student']['full_name']);
+$pdf->Cell(80,8,'Student ID: '. $intervention['Student']['student_id'],0,1);
 
-$pdf->Cell(80,8,'Teacher: '. $teacher);
-$pdf->Cell(80,8,'Grade: '. $grade,0,1);
+$pdf->Cell(80,8,'Teacher: '. $intervention['Student']['teacher']);
+$pdf->Cell(80,8,'Grade: '. $intervention['Student']['grade'],0,1);
 
 //Line break
 $pdf->Ln(4);
-/*
+
 //Arial 12
 $pdf->SetFont('Arial','',16);
 //Background color
 $pdf->SetFillColor(200,220,255);
 //Title
-$pdf->Cell(0,6,"$skill",0,1,'C',1);
+$pdf->Cell(0,6,$intervention['Skill']['name'],0,1,'C',1);
 //Line break
 $pdf->Ln(4);
 
 $pdf->SetFont('Arial','',16);
-$pdf->Cell(80,10,$exit_state);
-$pdf->Cell(80,10,$pgoalpercent . '% Complete',0,1);
+$pdf->Cell(80,10,'$complete?');
+$pdf->Cell(80,10,'$goal percent' . '% Complete',0,1);
 
 $pdf->SetFont('Arial','',12);
-$pdf->Cell(80,10,'Start Date: '. $sdate);
-$pdf->Cell(80,10,'End Date: '. $edate,0,1);
+$pdf->Cell(80,10,'Start Date: '. $intervention['Intervention']['start_date']);
+$pdf->Cell(80,10,'End Date: '. $intervention['Intervention']['end_date'],0,1);
 
-$pdf->Cell(80,10,'Performance Goal: '. $goalperf);
-$pdf->Cell(80,10,'Duration: '. $dur . ' weeks',0,1);
+$pdf->Cell(80,10,'Performance Goal: '. $intervention['Intervention']['goal_score']);
+$pdf->Cell(80,10,'Duration: '. $intervention['Skill']['duration'] . ' weeks',0,1);
 
-$pdf->MultiCell(0,6,'Intervention: '. $goaltxt,0,1);
+$pdf->MultiCell(0,6,'Intervention: '. $intervention['Intervention']['goal_text'],0,1);
 
 $pdf->Cell(80,10,"Intervention Strategy: Learning Center: small group, 45 minutes per day, 4x week",0,1);
 
-$pdf->Cell(80,10,'Baseline: '. $baseline . ' avg' ,0);
+$pdf->Cell(80,10,'Baseline: '. $intervention['Intervention']['baseline1'] . ' avg' ,0);
 
-$pdf->Cell(80,10,"Scores  1st $b1  |  2nd $b2  |  3rd $b3  ",0,1);
-
+$pdf->Cell(80,10,"Scores  1st " . $intervention['Intervention']['baseline1']  .
+	" |  2nd " . $intervention['Intervention']['baseline2'] . " |  3rd " . $intervention['Intervention']['baseline3'],0,1);
+/*
 //weekly scores 
 //Header
 $pdf->Cell(20,7,"Week",1);
@@ -140,9 +133,8 @@ $im = "tmp_graph.png";
 // save the graph
 $graph->Stroke($im);
 */
-$im = '"http://' . $_SERVER['SERVER_ADDR'] .'/interventions/graph/' . $intervention['Intervention']['id'] . '.png"';
 $pdf->ln();
-$pdf->Image($im,10,175,'','','png');
+$pdf->Image('http://localhost/interventions/graph/4',10,175,'','','PNG');
 
 $pdf->Output();
 
