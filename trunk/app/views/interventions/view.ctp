@@ -68,8 +68,7 @@
 		</dd>
 	</dl>
 	<dl>
-		<dt>graph</dt>
-		<dd><img src="/interventions/graph/<?php echo $intervention['Intervention']['id']; ?>"></dd>
+		<dt><img src="/interventions/graph/<?php echo $intervention['Intervention']['id']; ?>"></dt>
 	</dl>
 </div>
 <div class="actions">
