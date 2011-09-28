@@ -4,17 +4,16 @@ App::import('Vendor', 'jpgraph/jpgraph_line');
 App::import('Vendor', 'jpgraph/jpg-config.inc');
 
 $ydata = array();
-$ydata2 = array(5,7,9);
-		$i = 0;
-		foreach ($intervention['InterventionDetail'] as $interventionDetail):
-			$ydata[] = $interventionDetail['score'];
-		endforeach;
+foreach ($intervention['InterventionDetail'] as $interventionDetail):
+	$ydata[] = $interventionDetail['score'];
+endforeach;
 
-
-
+$ydata2 = array($intervention['Intervention']['baseline1'],"-","-","-","-","-","-","-","-","-","-","-","-");
+$ydata2 = array_splice($ydata2, 0, $intervention['Skill']['duration'] - 1);
+array_push($ydata2, $intervention['Intervention']['goal_score']);
 
 // Create the graph. These two calls are always required
-$graph  = new Graph(550, 250,"auto");    
+$graph  = new Graph(800, 400,"auto");    
 $graph->SetScale( "textlin", 0, 150);
 
 // Specify X-labels
@@ -54,6 +53,7 @@ $lineplot2->SetLegend("Goal");
 // Adjust the legend position
 $graph->legend->SetLayout(LEGEND_VERT);
 $graph->legend->Pos(0.05,0.5,"right","center");
+
 
 
 // Display the graph
