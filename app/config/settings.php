@@ -1,3 +1,17 @@
 <?php
-$config['School']['name'] = 'my School';
-$config['School']['year'] = '2011 - 2012';
+
+$config = array(
+
+  // ... other config settings
+
+  'School' => array(
+
+    'name' => 'my School Learnin Center',
+
+    'year' => '2011 - 2012',
+
+ ),
+
+  // ... other config settings
+
+);
