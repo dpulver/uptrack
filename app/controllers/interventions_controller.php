@@ -2,6 +2,7 @@
 class InterventionsController extends AppController {
 
 	var $name = 'Interventions';
+	var $uses = array('Intervention','InterventionDetail','Skill');
 
 	function index() {
 		$this->Intervention->recursive = 0;
@@ -20,7 +21,7 @@ class InterventionsController extends AppController {
 		if (!empty($this->data)) {
 			$this->Intervention->create();
 			if ($this->Intervention->save($this->data)) {
-        //this should be in its own function ***
+				//this should be in its own function ***
 				$duration = $this->Skill->field('duration');
 				for ($i = 1; $i <= $duration; $i++) {
 					$this->InterventionDetail->create();
