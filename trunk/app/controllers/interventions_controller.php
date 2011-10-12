@@ -20,6 +20,19 @@ class InterventionsController extends AppController {
 		if (!empty($this->data)) {
 			$this->Intervention->create();
 			if ($this->Intervention->save($this->data)) {
+        //this should be in its own function ***
+				$duration = $this->Skill->field('duration');
+				for ($i = 1; $i <= $duration; $i++) {
+					$this->InterventionDetail->create();
+					$data = array(
+						'id' => NULL,
+						'intervention_id' => $this->Intervention->getinsertID(),
+						'week' => $i,
+						'date' => '2011-01-01',
+						);
+					$this->InterventionDetail->save($data);
+				}
+				// *********
 				$this->Session->setFlash(__('The intervention has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
