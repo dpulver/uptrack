@@ -12,9 +12,7 @@
 			<th><?php echo $this->Paginator->sort('goal_score');?></th>
 			<th><?php echo $this->Paginator->sort('goal_text');?></th>
 			<th><?php echo $this->Paginator->sort('notes');?></th>
-			<th><?php echo $this->Paginator->sort('baseline1');?></th>
-			<th><?php echo $this->Paginator->sort('baseline2');?></th>
-			<th><?php echo $this->Paginator->sort('baseline3');?></th>
+			<th><?php echo $this->Paginator->sort('baseline');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -42,9 +40,7 @@
 		<td><?php echo $intervention['Intervention']['goal_score']; ?>&nbsp;</td>
 		<td><?php echo $intervention['Intervention']['goal_text']; ?>&nbsp;</td>
 		<td><?php echo $intervention['Intervention']['notes']; ?>&nbsp;</td>
-		<td><?php echo $intervention['Intervention']['baseline1']; ?>&nbsp;</td>
-		<td><?php echo $intervention['Intervention']['baseline2']; ?>&nbsp;</td>
-		<td><?php echo $intervention['Intervention']['baseline3']; ?>&nbsp;</td>
+		<td><?php echo $intervention['Intervention']['baseline']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $intervention['Intervention']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $intervention['Intervention']['id'])); ?>

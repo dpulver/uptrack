@@ -12,9 +12,7 @@
 		echo $this->Form->input('goal_score');
 		echo $this->Form->input('goal_text');
 		echo $this->Form->input('notes');
-		echo $this->Form->input('baseline1');
-		echo $this->Form->input('baseline2');
-		echo $this->Form->input('baseline3');
+		echo $this->Form->input('baseline');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

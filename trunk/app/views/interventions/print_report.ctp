@@ -39,7 +39,7 @@ $pdf->Cell(0,6,"",0,1,'C',1);
 //Student info
 $pdf->SetFont('Arial','',12);
 $pdf->Cell(80,8,'Name: '. $intervention['Student']['full_name']);
-$pdf->Cell(80,8,'Student ID: '. $intervention['Student']['student_id'],0,1);
+$pdf->Cell(80,8,'Student ID: '. $intervention['Student']['id_number'],0,1);
 $pdf->Cell(80,8,'Teacher: '. $intervention['Student']['teacher']);
 $pdf->Cell(80,8,'Grade: '. $intervention['Student']['grade'],0,1);
 
@@ -70,7 +70,7 @@ $pdf->MultiCell(0,6,'Targeted Skill: '. $intervention['Intervention']['goal_text
 
 $pdf->Cell(80,10,"Intervention Strategy: Learning Center: small group, 45 minutes per day, 4x week",0,1);
 
-$pdf->Cell(80,10,'Baseline: '. $intervention['Intervention']['baseline1'],0);
+$pdf->Cell(80,10,'Baseline: '. $intervention['Intervention']['baseline'],0);
 
 $pdf->Cell(80,10,'',0,1);
 
@@ -89,6 +89,14 @@ $pdf->Ln();
 $pdf->Cell(25,7,"Score",1);
 foreach ($intervention['InterventionDetail'] as $interventionDetail):
 	$pdf->Cell(13,7,$interventionDetail['score'],1);
+endforeach;
+$pdf->Ln();
+
+//Dates
+$pdf->Cell(25,7,"Dates",1);
+foreach ($intervention['InterventionDetail'] as $interventionDetail):
+	$date = new DateTime($interventionDetail['date']);
+	$pdf->Cell(13,7,$date->format("m/d"),1);
 endforeach;
 $pdf->Ln(10);
 

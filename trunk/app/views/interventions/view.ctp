@@ -51,19 +51,9 @@
 			<?php echo $intervention['Intervention']['notes']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Baseline1'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Baseline'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $intervention['Intervention']['baseline1']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Baseline2'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $intervention['Intervention']['baseline2']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Baseline3'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $intervention['Intervention']['baseline3']; ?>
+			<?php echo $intervention['Intervention']['baseline']; ?>
 			&nbsp;
 		</dd>
 	</dl>
