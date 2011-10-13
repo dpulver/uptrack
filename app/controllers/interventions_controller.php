@@ -2,7 +2,7 @@
 class InterventionsController extends AppController {
 
 	var $name = 'Interventions';
-	var $uses = array('Intervention','InterventionDetail','Skill');
+	var $uses = array('Intervention','InterventionDetail');
 
 	function index() {
 		$this->Intervention->recursive = 0;
@@ -22,14 +22,15 @@ class InterventionsController extends AppController {
 			$this->Intervention->create();
 			if ($this->Intervention->save($this->data)) {
 				//this should be in its own function ***
-				$duration = $this->Skill->field('duration');
+				$skill_id = $this->Intervention->field('skill_id', array('id =' => $this->Intervention->getinsertID()));
+				$duration = $this->Intervention->Skill->field('duration', array('id =' => $skill_id));
 				for ($i = 1; $i <= $duration; $i++) {
 					$this->InterventionDetail->create();
 					$data = array(
 						'id' => NULL,
 						'intervention_id' => $this->Intervention->getinsertID(),
 						'week' => $i,
-						'date' => '2011-01-01',
+						'date' => NULL,
 						);
 					$this->InterventionDetail->save($data);
 				}

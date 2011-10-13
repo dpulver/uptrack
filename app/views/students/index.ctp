@@ -6,7 +6,7 @@
 			<th><?php echo $this->Paginator->sort('last_name');?></th>
 			<th><?php echo $this->Paginator->sort('teacher');?></th>
 			<th><?php echo $this->Paginator->sort('grade');?></th>
-			<th><?php echo $this->Paginator->sort('student_id');?></th>
+			<th><?php echo $this->Paginator->sort('id_number');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -22,7 +22,7 @@
 		<td><?php echo $student['Student']['last_name']; ?>&nbsp;</td>
 		<td><?php echo $student['Student']['teacher']; ?>&nbsp;</td>
 		<td><?php echo $student['Student']['grade']; ?>&nbsp;</td>
-		<td><?php echo $student['Student']['student_id']; ?>&nbsp;</td>
+		<td><?php echo $student['Student']['id_number']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $student['Student']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $student['Student']['id'])); ?>

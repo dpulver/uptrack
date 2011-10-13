@@ -26,9 +26,9 @@
 			<?php echo $student['Student']['grade']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Student Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('ID Number'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $student['Student']['student_id']; ?>
+			<?php echo $student['Student']['id_number']; ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -59,9 +59,7 @@
 		<th><?php __('Goal Score'); ?></th>
 		<th><?php __('Goal Text'); ?></th>
 		<th><?php __('Notes'); ?></th>
-		<th><?php __('Baseline1'); ?></th>
-		<th><?php __('Baseline2'); ?></th>
-		<th><?php __('Baseline3'); ?></th>
+		<th><?php __('Baseline'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -83,9 +81,7 @@
 			<td><?php echo $intervention['goal_score'];?></td>
 			<td><?php echo $intervention['goal_text'];?></td>
 			<td><?php echo $intervention['notes'];?></td>
-			<td><?php echo $intervention['baseline1'];?></td>
-			<td><?php echo $intervention['baseline2'];?></td>
-			<td><?php echo $intervention['baseline3'];?></td>
+			<td><?php echo $intervention['baseline'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'interventions', 'action' => 'edit', $intervention['id'])); ?>

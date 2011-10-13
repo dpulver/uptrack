@@ -8,7 +8,7 @@ foreach ($intervention['InterventionDetail'] as $interventionDetail):
 	$ydata[] = $interventionDetail['score'];
 endforeach;
 
-$ydata2 = array($intervention['Intervention']['baseline1'],"-","-","-","-","-","-","-","-","-","-","-","-");
+$ydata2 = array($intervention['Intervention']['baseline'],"-","-","-","-","-","-","-","-","-","-","-","-");
 $ydata2 = array_splice($ydata2, 0, $intervention['Skill']['duration'] - 1);
 array_push($ydata2, $intervention['Intervention']['goal_score']);
 
