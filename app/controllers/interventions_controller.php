@@ -3,7 +3,8 @@ class InterventionsController extends AppController {
 
 	var $name = 'Interventions';
 	var $uses = array('Intervention','InterventionDetail');
-	var $helpers = array('Ajax','Javascript');
+	 var $components = array('Auth', 'Session', 'Email', 'RequestHandler'); 
+    var $helpers = array('Html', 'Session', 'Form', 'Js', 'DatePicker','Ajax','Javascript'); 
 
 	function index() {
 		$this->Intervention->recursive = 0;
