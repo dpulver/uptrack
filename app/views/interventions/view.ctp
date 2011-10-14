@@ -104,7 +104,18 @@
 			<td><?php echo $interventionDetail['intervention_id'];?></td>
 			<td><?php echo $interventionDetail['week'];?></td>
 			<td><?php echo $interventionDetail['date'];?></td>
-			<td><?php echo $interventionDetail['score'];?></td>
+			<td><div id="score<?php echo $interventionDetail['id']?>"><?php echo $interventionDetail['score'];?></div></td>
+			<?php 
+			echo $ajax->editor(
+				"score" . $interventionDetail['id'],
+				array(
+					'controller' => 'InterventionDetails',
+					'action' => 'update_detail',
+					$interventionDetail['id']
+				),
+				array('highlightcolor' => '#aaeeff',)
+			);
+			?>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'intervention_details', 'action' => 'view', $interventionDetail['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'intervention_details', 'action' => 'edit', $interventionDetail['id'])); ?>
