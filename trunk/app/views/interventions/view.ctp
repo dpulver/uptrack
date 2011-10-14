@@ -104,7 +104,7 @@
 			<td><?php echo $interventionDetail['intervention_id'];?></td>
 			<td><?php echo $interventionDetail['week'];?></td>
 			<td><?php echo $interventionDetail['date'];?></td>
-			<td><div id="score<?php echo $interventionDetail['id']?>"><?php echo $interventionDetail['score'];?></div></td>
+			<td><div id="score<?php echo $interventionDetail['id']?>" style="min-height: 20px"><?php echo $interventionDetail['score'];?></div></td>
 			<?php 
 			echo $ajax->editor(
 				"score" . $interventionDetail['id'],
