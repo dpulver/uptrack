@@ -6,7 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('student_id');
 		echo $this->Form->input('skill_id');
-		echo $this->Form->input('start_date');
+		echo $datePicker->picker('start_date');
 		echo $this->Form->input('end_date');
 		echo $this->Form->input('completed');
 		echo $this->Form->input('instructor_id');
