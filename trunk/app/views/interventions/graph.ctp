@@ -14,7 +14,10 @@ array_push($ydata2, $intervention['Intervention']['goal_score']);
 
 // Create the graph. These two calls are always required
 $graph  = new Graph(800, 400,"auto");    
-$graph->SetScale( "textlin", 0, 150);
+//set scale size
+if ($intervention['Intervention']['goal_score'] < 50) $ymax = 150;
+else $ymax = 50;
+$graph->SetScale( "textlin", 0, $ymax);
 
 // Specify X-labels
 //$databarx = array(B,1,2,3,4,5,6,7,8,9,10,11,12,13);
