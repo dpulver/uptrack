@@ -62,4 +62,22 @@ class InterventionDetailsController extends AppController {
 		$this->Session->setFlash(__('Intervention detail was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	function update_detail($id){
+		cakelog::write('debug',$this->data);
+		$value = $this->params['form']['value'];
+		$field = "score";
+		$this->InterventionDetail->id = $id;
+		if ($this->InterventionDetail->savefield($field, $value, true)){
+			//do somthing
+		}
+		if (!empty($this->data)) {
+			if ($this->InterventionDetail->save($this->data)) {
+			cakelog::write('debug',$this->data);
+			}
+		}
+		$this->set('interventionDetail', $this->InterventionDetail->read(null, $id));
+		$this->layout = 'update_detail'; //this will use the graph.ctp layout 
+        $this->render(); 
+	}
 }

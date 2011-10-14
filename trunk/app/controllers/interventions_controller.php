@@ -3,6 +3,7 @@ class InterventionsController extends AppController {
 
 	var $name = 'Interventions';
 	var $uses = array('Intervention','InterventionDetail');
+	var $helpers = array('Ajax','Javascript');
 
 	function index() {
 		$this->Intervention->recursive = 0;
@@ -101,4 +102,5 @@ class InterventionsController extends AppController {
 		$this->layout = 'graph'; //this will use the graph.ctp layout 
         $this->render(); 
 	}
+	
 }
