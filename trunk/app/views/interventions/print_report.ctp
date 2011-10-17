@@ -95,8 +95,10 @@ $pdf->Ln();
 //Dates
 $pdf->Cell(25,7,"Dates",1);
 foreach ($intervention['InterventionDetail'] as $interventionDetail):
+	if ($interventionDetail['date'] != NULL){
 	$date = new DateTime($interventionDetail['date']);
 	$pdf->Cell(13,7,$date->format("m/d"),1);
+	}
 endforeach;
 $pdf->Ln(10);
 
