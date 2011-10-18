@@ -35,13 +35,6 @@
 		echo $this->Html->script('scriptaculous/lib/prototype');
 		echo $this->Html->script('scriptaculous/src/scriptaculous');
 		echo $this->Html->script('scriptaculous/src/extensions');
-		echo $this->Html->script(array('jscalendar/jscal2', 'jscalendar/lang/en'));
-		echo $html->css('jscal2', 'stylesheet')."\n"; 
-		echo $html->css('border-radius', 'stylesheet')."\n"; 
-		echo $html->css('steel/steel', 'stylesheet')."\n"; 
-		//echo $html->css('gold/gold', 'stylesheet')."\n"; 
-		//echo $html->css('matrix/matrix', 'stylesheet')."\n"; 
-		//echo $html->css('win2k/win2k', 'stylesheet')."\n"; 
 	?>
 </head>
 <body>

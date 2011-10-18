@@ -15,7 +15,7 @@ array_push($ydata2, $intervention['Intervention']['goal_score']);
 // Create the graph. These two calls are always required
 $graph  = new Graph(800, 400,"auto");    
 //set scale size
-if ($intervention['Intervention']['goal_score'] < 50) $ymax = 150;
+if ($intervention['Intervention']['goal_score'] > 50) $ymax = 150;
 else $ymax = 50;
 $graph->SetScale( "textlin", 0, $ymax);
 
