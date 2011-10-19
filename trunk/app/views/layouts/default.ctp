@@ -29,12 +29,12 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('jquery-ui-1.8.16.custom');
 
 		echo $scripts_for_layout;
 		
-		echo $this->Html->script('scriptaculous/lib/prototype');
-		echo $this->Html->script('scriptaculous/src/scriptaculous');
-		echo $this->Html->script('scriptaculous/src/extensions');
+		echo $this->Html->script('jquery/jquery');
+		echo $this->Html->script('jquery/jquery-ui');
 	?>
 </head>
 <body>
