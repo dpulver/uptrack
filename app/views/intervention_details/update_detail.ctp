@@ -1,1 +1,1 @@
-<?php echo $interventionDetail['InterventionDetail']['score']; ?>
+<?php echo $update_value; ?>

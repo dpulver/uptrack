@@ -35,6 +35,7 @@
 		
 		echo $this->Html->script('jquery/jquery');
 		echo $this->Html->script('jquery/jquery-ui');
+		echo $this->Html->script('jquery/jquery.editinplace');
 	?>
 </head>
 <body>
@@ -59,8 +60,13 @@
 		</div>
 	</div>
 	<?php 
-	echo $this->element('sql_dump'); 
-	//echo $this->Js->writeBuffer();
+	echo $this->element('sql_dump');
+	echo "
+	<script>\n 
+	$(function(){\n 
+	$(\".datepicker\" ).datepicker();\n });\n 
+
+	</script>";		
 	?>
 </body>
 </html>
