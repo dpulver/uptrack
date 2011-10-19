@@ -63,20 +63,16 @@ class InterventionDetailsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
-	function update_detail($id){
-		cakelog::write('debug',$this->data);
-		$value = $this->params['form']['value'];
-		$field = "score";
+	function update_detail(){
+	//ugly but works
+		$value = $this->params['form']['update_value'];
+		$id = $this->params['form']['detailid'];
+		$field = $this->params['form']['field'];
 		$this->InterventionDetail->id = $id;
 		if ($this->InterventionDetail->savefield($field, $value, true)){
 			//do somthing
 		}
-		if (!empty($this->data)) {
-			if ($this->InterventionDetail->save($this->data)) {
-			cakelog::write('debug',$this->data);
-			}
-		}
-		$this->set('interventionDetail', $this->InterventionDetail->read(null, $id));
+		$this->set('update_value', $value);
 		$this->layout = 'update_detail'; //this will use the graph.ctp layout 
         $this->render(); 
 	}

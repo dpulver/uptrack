@@ -103,19 +103,34 @@
 			<td><?php echo $interventionDetail['id'];?></td>
 			<td><?php echo $interventionDetail['intervention_id'];?></td>
 			<td><?php echo $interventionDetail['week'];?></td>
-			<td><?php echo $interventionDetail['date'];?></td>
-			<td><div id="score<?php echo $interventionDetail['id']?>" style="min-height: 20px"><?php echo $interventionDetail['score'];?></div></td>
-			<?php 
-			echo $ajax->editor(
-				"score" . $interventionDetail['id'],
-				array(
-					'controller' => 'InterventionDetails',
-					'action' => 'update_detail',
-					$interventionDetail['id']
-				),
-				array('highlightcolor' => '#aaeeff',)
-			);
+			<td><div class="edit" id="date<?php echo $interventionDetail['id']?>" style="min-height: 20px"><?php echo $interventionDetail['date'];?></div></td>
+			<script>
+			<?php
+			$detailid = $interventionDetail['id'];
+			echo "$(function(){\n 
+				$(\"#date$detailid\" ).editInPlace({\n 
+					url:\"/intervention_details/update_detail/$detailid\", 
+					show_buttons: true,
+					element_id: $detailid,
+					params: \"detailid=$detailid&field=date\"
+					});\n 
+				});\n";
 			?>
+			</script>
+			<td><div class="edit" id="score<?php echo $interventionDetail['id']?>" style="min-height: 20px"><?php echo $interventionDetail['score'];?></div></td>
+			<script>
+			<?php
+			$detailid = $interventionDetail['id'];
+			echo "$(function(){\n 
+				$(\"#score$detailid\" ).editInPlace({\n 
+					url:\"/intervention_details/update_detail/$detailid\", 
+					show_buttons: true,
+					element_id: $detailid,
+					params: \"detailid=$detailid&field=score\"
+					});\n 
+				});\n";
+			?>
+			</script>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'intervention_details', 'action' => 'view', $interventionDetail['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'intervention_details', 'action' => 'edit', $interventionDetail['id'])); ?>

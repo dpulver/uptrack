@@ -1,9 +1,4 @@
 <div class="interventions form">
-<?php echo '<script> 
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
-	</script>';?>
 <?php echo $this->Form->create('Intervention');?>
 	<fieldset>
 		<legend><?php __('Edit Intervention'); ?></legend>
@@ -11,14 +6,15 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('student_id');
 		echo $this->Form->input('skill_id');
-		echo $datepicker->picker('start_date');
-		echo $this->Form->input('end_date');
+		echo $this->Form->input('start_date',array('type' => 'text', 'class' => 'datepicker'));
+		echo $this->Form->input('end_date',array('type' => 'text', 'class' => 'datepicker'));
 		echo $this->Form->input('completed');
 		echo $this->Form->input('instructor_id');
 		echo $this->Form->input('goal_score');
 		echo $this->Form->input('goal_text');
 		echo $this->Form->input('notes');
 		echo $this->Form->input('baseline');
+		
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
@@ -39,3 +35,4 @@
 		<li><?php echo $this->Html->link(__('New Intervention Detail', true), array('controller' => 'intervention_details', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+	
