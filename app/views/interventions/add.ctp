@@ -5,8 +5,8 @@
 	<?php
 		echo $this->Form->input('student_id');
 		echo $this->Form->input('skill_id');
-		echo $this->Form->input('start_date');
-		echo $this->Form->input('end_date');
+		echo $this->Form->input('start_date',array('type' => 'text', 'class' => 'datepicker'));
+		echo $this->Form->input('end_date',array('type' => 'text', 'class' => 'datepicker'));
 		echo $this->Form->input('completed');
 		echo $this->Form->input('instructor_id');
 		echo $this->Form->input('goal_score');
