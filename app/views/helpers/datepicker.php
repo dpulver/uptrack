@@ -1,17 +1,7 @@
 <?php 
-/** 
-* DatePicker Helper 
-* Used with Dynarch Calendar JSCal2 and CakePHP 1.3 
-* Based on the helper by Nik Chankov http://nik.chankov.net 
-* 
-* @author  Christakis Mina 
-* @email   minatsu@gmail.com 
-* @version 1.0.0 
-*/ 
 
-uses('view/helpers/Form'); 
-class DatePickerHelper extends FormHelper { 
-    
+class DatepickerHelper extends FormHelper { 
+
     var $format = '%Y-%m-%d'; 
     
     /** 
@@ -34,11 +24,11 @@ class DatePickerHelper extends FormHelper {
         $this->_setup(); 
         $this->setEntity($fieldName); 
         $htmlAttributes = $this->domId($options);         
-        $divOptions['class'] = 'date'; 
-        $options['type'] = 'text'; 
-        $options['maxlength'] = '255'; 
+       $options['class'] = 'hasDatepicker'; 
+        $options['id'] = 'datepicker';
+		$options['type'] = 'text'; 
+        $options['maxlength'] = '20'; 
         $options['div']['class'] = 'formfield'; 
-        $options['after'] = $this->Html->image('calendar.png', array('id' => $fieldName.'-trigger')).'<script> Calendar.setup({trigger: "'.$fieldName.'-trigger", inputField: "'.$htmlAttributes['id'].'", onSelect   : function() { this.hide() } }); </script>'; 
         return $this->input($fieldName, $options); 
     } 
      

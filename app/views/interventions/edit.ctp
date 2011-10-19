@@ -1,4 +1,9 @@
 <div class="interventions form">
+<?php echo '<script> 
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	</script>';?>
 <?php echo $this->Form->create('Intervention');?>
 	<fieldset>
 		<legend><?php __('Edit Intervention'); ?></legend>
@@ -6,7 +11,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('student_id');
 		echo $this->Form->input('skill_id');
-		echo $datePicker->picker('start_date');
+		echo $datepicker->picker('start_date');
 		echo $this->Form->input('end_date');
 		echo $this->Form->input('completed');
 		echo $this->Form->input('instructor_id');
