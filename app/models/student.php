@@ -4,7 +4,7 @@ class Student extends AppModel {
 	var $virtualFields = array(    'full_name' => 'CONCAT(Student.first_name, " ", Student.last_name)');
 	
 	var $displayField = 'full_name';
-	
+	var $order = "last_name";dc
 	
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
