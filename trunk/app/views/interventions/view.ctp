@@ -104,7 +104,8 @@
 			$detailid = $interventionDetail['id'];
 			echo "$(function(){\n 
 				$(\"#date$detailid\" ).editInPlace({\n 
-					url:\"/intervention_details/update_detail/$detailid\", 
+					url:\"/intervention_details/update_detail\", 
+					field_type:	\"datepicker\",
 					show_buttons: true,
 					element_id: $detailid,
 					params: \"detailid=$detailid&field=date\"

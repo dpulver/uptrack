@@ -34,9 +34,7 @@
 	<?php if (!empty($skill['Intervention'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
 		<th><?php __('Student Id'); ?></th>
-		<th><?php __('Skill Id'); ?></th>
 		<th><?php __('Start Date'); ?></th>
 		<th><?php __('End Date'); ?></th>
 		<th><?php __('Completed'); ?></th>
@@ -44,9 +42,7 @@
 		<th><?php __('Goal Score'); ?></th>
 		<th><?php __('Goal Text'); ?></th>
 		<th><?php __('Notes'); ?></th>
-		<th><?php __('Baseline1'); ?></th>
-		<th><?php __('Baseline2'); ?></th>
-		<th><?php __('Baseline3'); ?></th>
+		<th><?php __('Baseline'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -58,23 +54,18 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $intervention['id'];?></td>
-			<td><?php echo $intervention['student_id'];?></td>
-			<td><?php echo $intervention['skill_id'];?></td>
+			<td><?php echo $intervention['Student']['full_name'];?></td>
 			<td><?php echo $intervention['start_date'];?></td>
 			<td><?php echo $intervention['end_date'];?></td>
-			<td><?php echo $intervention['completed'];?></td>
-			<td><?php echo $intervention['instructor_id'];?></td>
+			<td><?php echo $intervention['completed']?'Yes' : 'No';?></td>
+			<td><?php echo $intervention['Instructor']['full_name'];?></td>
 			<td><?php echo $intervention['goal_score'];?></td>
 			<td><?php echo $intervention['goal_text'];?></td>
 			<td><?php echo $intervention['notes'];?></td>
-			<td><?php echo $intervention['baseline1'];?></td>
-			<td><?php echo $intervention['baseline2'];?></td>
-			<td><?php echo $intervention['baseline3'];?></td>
+			<td><?php echo $intervention['baseline'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'interventions', 'action' => 'edit', $intervention['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'interventions', 'action' => 'delete', $intervention['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $intervention['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>

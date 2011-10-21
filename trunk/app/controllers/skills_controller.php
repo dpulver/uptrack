@@ -2,13 +2,14 @@
 class SkillsController extends AppController {
 
 	var $name = 'Skills';
-
+	
 	function index() {
 		$this->Skill->recursive = 0;
 		$this->set('skills', $this->paginate());
 	}
 
 	function view($id = null) {
+		$this->Skill->recursive = 2;
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid skill', true));
 			$this->redirect(array('action' => 'index'));

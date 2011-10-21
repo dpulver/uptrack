@@ -37,7 +37,6 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Student', true), array('action' => 'edit', $student['Student']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Student', true), array('action' => 'delete', $student['Student']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $student['Student']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Students', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Student', true), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
@@ -50,8 +49,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Student Id'); ?></th>
-		<th><?php __('Skill Id'); ?></th>
+		<th><?php __('Skill'); ?></th>
 		<th><?php __('Start Date'); ?></th>
 		<th><?php __('End Date'); ?></th>
 		<th><?php __('Completed'); ?></th>
@@ -72,12 +70,11 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $intervention['id'];?></td>
-			<td><?php echo $intervention['student_id'];?></td>
-			<td><?php echo $intervention['skill_id'];?></td>
+			<td><?php echo $intervention['Skill']['name'];?></td>
 			<td><?php echo $intervention['start_date'];?></td>
 			<td><?php echo $intervention['end_date'];?></td>
-			<td><?php echo $intervention['completed'];?></td>
-			<td><?php echo $intervention['instructor_id'];?></td>
+			<td><?php echo $intervention['completed']?'Yes' : 'No';?></td>
+			<td><?php echo $intervention['Instructor']['full_name'];?></td>
 			<td><?php echo $intervention['goal_score'];?></td>
 			<td><?php echo $intervention['goal_text'];?></td>
 			<td><?php echo $intervention['notes'];?></td>
@@ -85,7 +82,6 @@
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'interventions', 'action' => 'edit', $intervention['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'interventions', 'action' => 'delete', $intervention['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $intervention['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>

@@ -9,6 +9,7 @@ class StudentsController extends AppController {
 	}
 
 	function view($id = null) {
+		$this->Student->recursive = 2;
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid student', true));
 			$this->redirect(array('action' => 'index'));
