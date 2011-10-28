@@ -40,8 +40,6 @@
 		<th><?php __('Completed'); ?></th>
 		<th><?php __('Instructor Id'); ?></th>
 		<th><?php __('Goal Score'); ?></th>
-		<th><?php __('Goal Text'); ?></th>
-		<th><?php __('Notes'); ?></th>
 		<th><?php __('Baseline'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -60,8 +58,6 @@
 			<td><?php echo $intervention['completed']?'Yes' : 'No';?></td>
 			<td><?php echo $intervention['Instructor']['full_name'];?></td>
 			<td><?php echo $intervention['goal_score'];?></td>
-			<td><?php echo $intervention['goal_text'];?></td>
-			<td><?php echo $intervention['notes'];?></td>
 			<td><?php echo $intervention['baseline'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
