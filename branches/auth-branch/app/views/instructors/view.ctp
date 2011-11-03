@@ -31,9 +31,9 @@
 			<?php echo $instructor['Instructor']['last_name']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Role Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Group'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $instructor['Instructor']['role_id']; ?>
+			<?php echo $this->Html->link($instructor['Group']['name'], array('controller' => 'groups', 'action' => 'view', $instructor['Group']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -45,6 +45,8 @@
 		<li><?php echo $this->Html->link(__('Delete Instructor', true), array('action' => 'delete', $instructor['Instructor']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $instructor['Instructor']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Instructors', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Instructor', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Groups', true), array('controller' => 'groups', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Group', true), array('controller' => 'groups', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
 	</ul>
@@ -64,9 +66,7 @@
 		<th><?php __('Goal Score'); ?></th>
 		<th><?php __('Goal Text'); ?></th>
 		<th><?php __('Notes'); ?></th>
-		<th><?php __('Baseline1'); ?></th>
-		<th><?php __('Baseline2'); ?></th>
-		<th><?php __('Baseline3'); ?></th>
+		<th><?php __('Baseline'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -88,9 +88,7 @@
 			<td><?php echo $intervention['goal_score'];?></td>
 			<td><?php echo $intervention['goal_text'];?></td>
 			<td><?php echo $intervention['notes'];?></td>
-			<td><?php echo $intervention['baseline1'];?></td>
-			<td><?php echo $intervention['baseline2'];?></td>
-			<td><?php echo $intervention['baseline3'];?></td>
+			<td><?php echo $intervention['baseline'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'interventions', 'action' => 'edit', $intervention['id'])); ?>
