@@ -68,9 +68,8 @@ class InstructorsController extends AppController {
 	}
 	
 	function logout() {    
-		
-		//Leave empty for now.
-	
+		$this->Session->setFlash('Good-Bye');
+		$this->redirect($this->Auth->logout());
 	}
 	
 	function beforeFilter() 
