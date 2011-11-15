@@ -103,4 +103,10 @@ class InterventionsController extends AppController {
         $this->render(); 
 	}
 	
+	function beforeFilter() 
+	{
+		parent::beforeFilter(); 
+		$this->Auth->allow(array('graph'));
+	}
+
 }
