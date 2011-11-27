@@ -35,6 +35,7 @@
 		
 		echo $this->Html->script('jquery/jquery');
 		echo $this->Html->script('jquery/jquery-ui');
+		echo $this->Html->script('uptrack');
 		echo $this->Html->script('jquery/jquery.inplace');
 	?>
 </head>
