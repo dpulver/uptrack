@@ -30,6 +30,9 @@
 	</ul>
 </div>
 <div class="related">
+	<span class="doc-controls">
+			<a href="#" id="hide-parent-properties" class="active">Show/Hide parent properties</a>
+	</span>
 	<h3><?php __('Related Interventions');?></h3>
 	<?php if (!empty($skill['Intervention'])):?>
 	<table cellpadding = "0" cellspacing = "0">
