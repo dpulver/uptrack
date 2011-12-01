@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('email');?></th>
 			<th><?php echo $this->Paginator->sort('first_name');?></th>
 			<th><?php echo $this->Paginator->sort('last_name');?></th>
-			<th><?php echo $this->Paginator->sort('role_id');?></th>
+			<th><?php echo $this->Paginator->sort('group_id');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -26,7 +26,9 @@
 		<td><?php echo $instructor['Instructor']['email']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['first_name']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['last_name']; ?>&nbsp;</td>
-		<td><?php echo $instructor['Instructor']['role_id']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($instructor['Group']['name'], array('controller' => 'groups', 'action' => 'view', $instructor['Group']['id'])); ?>
+		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $instructor['Instructor']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $instructor['Instructor']['id'])); ?>
@@ -53,6 +55,8 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Instructor', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Groups', true), array('controller' => 'groups', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Group', true), array('controller' => 'groups', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
 	</ul>
