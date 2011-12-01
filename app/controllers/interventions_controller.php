@@ -7,7 +7,15 @@ class InterventionsController extends AppController {
 
 	function index() {
 		$this->Intervention->recursive = 0;
-		$this->set('interventions', $this->paginate());
+		if ($this->Session->read('Auth.Instructor.group_id') == ADMIN)//test to see if admin
+		{
+			$this->set('interventions', $this->paginate());
+		}
+		else //limited to instructors if not
+		{
+			$this->set('interventions', $this->paginate(array('Intervention.instructor_id' => $this->Session->read('Auth.Instructor.id'))));
+		}
+		
 	}
 
 	function view($id = null) {
@@ -103,4 +111,21 @@ class InterventionsController extends AppController {
         $this->render(); 
 	}
 	
+	function beforeFilter() 
+	{
+		parent::beforeFilter(); 
+		$this->Auth->allow(array('graph'));
+	}
+	
+	function getCurrentUser()
+	{
+		if($this->Session->check('Auth.Instructor.id'))
+		{
+			return $this->Session->read('Auth.Instructor.id');
+		}
+		else
+		{
+			return False;
+		}
+	}
 }

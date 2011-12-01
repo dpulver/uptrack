@@ -30,6 +30,9 @@
 	</ul>
 </div>
 <div class="related">
+	<span class="doc-controls">
+			<a href="#" id="hide-completed-interventions">Show/Hide completed interventions</a>
+	</span>
 	<h3><?php __('Related Interventions');?></h3>
 	<?php if (!empty($skill['Intervention'])):?>
 	<table cellpadding = "0" cellspacing = "0">
@@ -49,6 +52,9 @@
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
+			}
+			if ($intervention['completed']) {
+				$class = ' class="completed"';
 			}
 		?>
 		<tr<?php echo $class;?>>

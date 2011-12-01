@@ -50,3 +50,4 @@
  */
  
 Configure::load('settings');
+define("ADMIN", 1);
