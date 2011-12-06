@@ -9,12 +9,30 @@ class SkillsController extends AppController {
 	}
 
 	function view($id = null) {
-		$this->Skill->recursive = 2;
+		$this->Skill->Behaviors->attach('Containable');
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid skill', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('skill', $this->Skill->read(null, $id));
+		if ($this->Session->read('Auth.Instructor.group_id') == ADMIN)//test to see if admin
+		{
+			$this->set('skill', $this->Skill->read(null, $id));
+		}
+		else //limited to instructors if not
+		{
+			$instructor_id = $this->Session->read('Auth.Instructor.id');
+			$data = $this->Skill->find('first', array(
+                'conditions' => array('Skill.id' => $id),
+				'contain' => array(
+					'Intervention' => array(
+						'Student', 
+						'Instructor',
+						'conditions' => array('Intervention.instructor_id' => $instructor_id)
+						))));
+			$this->set('skill', $data);
+		}
+		
+		
 	}
 
 	function add() {
