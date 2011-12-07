@@ -16,6 +16,7 @@ class SkillsController extends AppController {
 		}
 		if ($this->Session->read('Auth.Instructor.group_id') == ADMIN)//test to see if admin
 		{
+			$this->Skill->recursive = 2;
 			$this->set('skill', $this->Skill->read(null, $id));
 		}
 		else //limited to instructors if not
