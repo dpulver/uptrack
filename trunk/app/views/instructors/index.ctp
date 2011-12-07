@@ -4,7 +4,6 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('username');?></th>
-			<th><?php echo $this->Paginator->sort('password');?></th>
 			<th><?php echo $this->Paginator->sort('email');?></th>
 			<th><?php echo $this->Paginator->sort('first_name');?></th>
 			<th><?php echo $this->Paginator->sort('last_name');?></th>
@@ -22,7 +21,6 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $instructor['Instructor']['id']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['username']; ?>&nbsp;</td>
-		<td><?php echo $instructor['Instructor']['password']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['email']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['first_name']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['last_name']; ?>&nbsp;</td>
