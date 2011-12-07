@@ -9,12 +9,29 @@ class StudentsController extends AppController {
 	}
 
 	function view($id = null) {
-		$this->Student->recursive = 2;
+		$this->Student->Behaviors->attach('Containable');
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid student', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('student', $this->Student->read(null, $id));
+		if ($this->Session->read('Auth.Instructor.group_id') == ADMIN)//test to see if admin
+		{
+			$this->Student->recursive = 2;
+			$this->set('student', $this->Student->read(null, $id));
+		}
+		else //limited to instructors if not
+		{
+			$instructor_id = $this->Session->read('Auth.Instructor.id');
+			$data = $this->Student->find('first', array(
+                'conditions' => array('Student.id' => $id),
+				'contain' => array(
+					'Intervention' => array(
+						'Skill', 
+						'Instructor',
+						'conditions' => array('Intervention.instructor_id' => $instructor_id)
+						))));
+			$this->set('student', $data);
+		}
 	}
 
 	function add() {
