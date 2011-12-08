@@ -21,7 +21,7 @@ $pdf->AddPage();
 
 
 //Logo
-$pdf->Image('http://localhost/img/spmlogo.png',10,8,23);
+$pdf->Image('http://localhost/img/uptrack_header.png',10,8,"",21);
 
 $pdf->Cell(0);    
 $pdf->SetFont('Arial','B',16);
@@ -80,7 +80,7 @@ $pdf->Cell(25,7,"Score Seq",1);
 $col=1;
 while($col<=$intervention['Skill']['duration'])
   {
-  $pdf->Cell(13,7,"wk$col",1);
+  $pdf->Cell(13,7,"$col",1);
   $col++;
   }	
 $pdf->Ln();
