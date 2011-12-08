@@ -45,7 +45,7 @@ class InterventionsController extends AppController {
 				}
 				// *********
 				$this->Session->setFlash(__('The intervention has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				 $this->redirect(array('action' => 'view', $this->Intervention->id));
 			} else {
 				$this->Session->setFlash(__('The intervention could not be saved. Please, try again.', true));
 			}
