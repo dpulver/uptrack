@@ -11,7 +11,7 @@ class Skill extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => array("instructor_id" => "asc", "completed" => "asc"),
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
