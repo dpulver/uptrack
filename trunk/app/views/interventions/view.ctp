@@ -64,14 +64,14 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Intervention', true), array('action' => 'edit', $intervention['Intervention']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Print Intervention', true), array('action' => 'print_report', $intervention['Intervention']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention', true), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Student', true), array('controller' => 'students', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Skill', true), array('controller' => 'skills', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
+		
+		<li><?php echo $this->Html->link(__('Edit Intervention', true), array('action' => 'edit', $intervention['Intervention']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('New Intervention', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Print Intervention', true), array('action' => 'print_report', $intervention['Intervention']['id'])); ?> </li>
 	</ul>
 </div>
 <div class="related">
