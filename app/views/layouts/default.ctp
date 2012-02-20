@@ -45,8 +45,8 @@
 			<h1><?php  echo Configure::read('School.name'); ?> <?php  echo Configure::read('School.year'); ?></h1>
 			<div style="float:right;"> 
 			<?php If($this->Session->check('Auth.Instructor.first_name')){
-				echo $html->link('Logout', array('controller' => 'Instructors', 'action'=>'logout'));
-				echo ' hello ' . $this->Session->read('Auth.Instructor.first_name');
+				echo ' Hello, ' . $this->Session->read('Auth.Instructor.first_name') . ' ';
+				echo $html->link('Logout', array('controller' => 'Instructors', 'action'=>'logout'),array('style' => 'text-decoration:none;color:#ee3322'));
 				}?>
 			</div>
 		</div>
