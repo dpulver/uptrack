@@ -3,9 +3,11 @@
 <?php __('Student Progress Tracking For Teachers.'); ?>
 </p>
 
-<ul>
-	<li><a href="/students"><?php __('List Students'); ?> </a>
-	<ul><li><?php __('Show list of students'); ?></li></ul></li>
-	<li><a href="/skills"><?php __('List Skills'); ?> </a>
-	<ul><li><?php __('Show list of skills'); ?></li></ul></li>
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
+		<ul><li><?php __('Show list of students'); ?></li></ul></li>
+		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
+	  <ul><li><?php __('Show list of skills'); ?></li></ul></li>
 </ul>
+</div>
