@@ -2,7 +2,6 @@
 	<h2><?php __('Skills');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('duration');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -16,13 +15,10 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $skill['Skill']['id']; ?>&nbsp;</td>
 		<td><?php echo $skill['Skill']['name']; ?>&nbsp;</td>
 		<td><?php echo $skill['Skill']['duration']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $skill['Skill']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $skill['Skill']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $skill['Skill']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $skill['Skill']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -44,8 +40,11 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions','action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
+		<br>
 		<li><?php echo $this->Html->link(__('New Skill', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
-	</ul>
+		</ul>
 </div>
