@@ -74,8 +74,6 @@
 	<?php if (!empty($intervention['InterventionDetail'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Intervention Id'); ?></th>
 		<th><?php __('Week'); ?></th>
 		<th><?php __('Date'); ?></th>
 		<th><?php __('Score'); ?></th>
@@ -89,8 +87,6 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $interventionDetail['id'];?></td>
-			<td><?php echo $interventionDetail['intervention_id'];?></td>
 			<td><?php echo $interventionDetail['week'];?></td>
 			<td><div class="edit" id="date<?php echo $interventionDetail['id']?>" style="min-height: 20px"><?php echo $interventionDetail['date'];?></div></td>
 			<script>
