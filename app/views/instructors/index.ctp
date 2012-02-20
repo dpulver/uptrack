@@ -2,7 +2,6 @@
 	<h2><?php __('Instructors');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('username');?></th>
 			<th><?php echo $this->Paginator->sort('email');?></th>
 			<th><?php echo $this->Paginator->sort('first_name');?></th>
@@ -19,7 +18,6 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $instructor['Instructor']['id']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['username']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['email']; ?>&nbsp;</td>
 		<td><?php echo $instructor['Instructor']['first_name']; ?>&nbsp;</td>
@@ -29,8 +27,6 @@
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $instructor['Instructor']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $instructor['Instructor']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $instructor['Instructor']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $instructor['Instructor']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -52,10 +48,10 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Instructor', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Groups', true), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group', true), array('controller' => 'groups', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions','action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
+		<br>
 	</ul>
 </div>

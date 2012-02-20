@@ -11,11 +11,6 @@
 			<?php echo $instructor['Instructor']['username']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Password'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $instructor['Instructor']['password']; ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Email'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $instructor['Instructor']['email']; ?>
@@ -41,14 +36,12 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions','action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
+		<br>
 		<li><?php echo $this->Html->link(__('Edit Instructor', true), array('action' => 'edit', $instructor['Instructor']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Instructor', true), array('action' => 'delete', $instructor['Instructor']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $instructor['Instructor']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Instructors', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Instructor', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Groups', true), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group', true), array('controller' => 'groups', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
