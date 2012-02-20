@@ -22,16 +22,11 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Student', true), array('controller' => 'students', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Skill', true), array('controller' => 'skills', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Instructor', true), array('controller' => 'instructors', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Intervention Details', true), array('controller' => 'intervention_details', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention Detail', true), array('controller' => 'intervention_details', 'action' => 'add')); ?> </li>
+		
 	</ul>
 </div>
 	

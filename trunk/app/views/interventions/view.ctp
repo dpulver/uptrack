@@ -1,11 +1,6 @@
 <div class="interventions view">
 <h2><?php  __('Intervention');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $intervention['Intervention']['id']; ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Student'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($intervention['Student']['full_name'], array('controller' => 'students', 'action' => 'view', $intervention['Student']['id'])); ?>
@@ -84,7 +79,6 @@
 		<th><?php __('Week'); ?></th>
 		<th><?php __('Date'); ?></th>
 		<th><?php __('Score'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
 		$i = 0;
