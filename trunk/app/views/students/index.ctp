@@ -48,8 +48,11 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('List Students', true), array('controller' => 'students', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Interventions', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
+		<br>
 		<li><?php echo $this->Html->link(__('New Student', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Interventions', true), array('controller' => 'interventions', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Intervention', true), array('controller' => 'interventions', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
