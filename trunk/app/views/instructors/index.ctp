@@ -53,5 +53,6 @@
 		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
 		<br>
+		<li><?php echo $this->Html->link(__('Add Instructor', true), array('action' => 'add', $instructor['Instructor']['id'])); ?> </li>
 	</ul>
 </div>
