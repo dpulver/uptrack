@@ -21,7 +21,7 @@ $pdf->AddPage();
 
 
 //Logo
-$pdf->Image('http://localhost/img/uptrack_header.png',10,8,"",21);
+$pdf->Image('img/uptrack_header.png',10,8,"",21);
 
 $pdf->Cell(0);    
 $pdf->SetFont('Arial','B',16);
@@ -106,7 +106,7 @@ $pdf->MultiCell(0,6,'Notes: '. $intervention['Intervention']['notes'],0,1);
 
 
 $pdf->ln();
-$pdf->Image('http://localhost/interventions/graph/' . $intervention['Intervention']['id'],10,175,'','','PNG');
+$pdf->Image('http://' . $_SERVER['SERVER_NAME'] . '/interventions/graph/' . $intervention['Intervention']['id'],10,175,'','','PNG');
 
 $pdf->Output();
 
