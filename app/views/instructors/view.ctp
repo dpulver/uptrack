@@ -41,7 +41,6 @@
 		<li><?php echo $this->Html->link(__('List Skills', true), array('controller' => 'skills', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Instructors', true), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
 		<br>
-		<li><?php echo $this->Html->link(__('Add Instructor', true), array('action' => 'add', $instructor['Instructor']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('Edit Instructor', true), array('action' => 'edit', $instructor['Instructor']['id'])); ?> </li>
 	</ul>
 </div>
@@ -85,8 +84,6 @@
 			<td><?php echo $intervention['baseline'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'interventions', 'action' => 'view', $intervention['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'interventions', 'action' => 'edit', $intervention['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'interventions', 'action' => 'delete', $intervention['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $intervention['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
